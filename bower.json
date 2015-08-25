@@ -1,0 +1,26 @@
+{
+  "name": "VSite",
+  "version": "0.0.1",
+  "authors": [
+    "vvliebe"
+  ],
+  "description": "vvliebe's personal website",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "http://vvliebe.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "requirejs": "~2.1.20",
+    "jquery": "~2.1.4",
+    "react": "~0.13.3"
+  }
+}

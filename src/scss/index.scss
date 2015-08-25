@@ -1,0 +1,54 @@
+@import "var";
+
+@-webkit-keyframes type {
+	from {
+		width: 0;
+	}
+}
+
+header {
+	background-size: 100% 100%;
+	height: 600px;
+	position: relative;
+	.title {
+		position: absolute;
+		width: 250px;
+		left: 100px;
+		top: 50px;
+		font-size: x-large;
+		color: #FFFFFF;
+		overflow: hidden;
+		@include animation(type 5s steps(50, end));
+	}
+	nav {
+		div {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			border-radius: 50px;
+			line-height: 100px;
+			text-align: center;
+			background-color: rgba(0,0,0,0.75);
+			color: #eeeeee;
+			left: 50%;
+			top: 50%;
+			cursor: pointer;
+			@include transition(.2s, ease-in-out);
+			&:hover {
+				width: 120px;
+				height: 120px;
+				line-height: 120px;
+			}
+		}
+		.blog-div {
+			@include transform(translate(-50%, 50%));
+		}
+		.about-div {
+			@include transform(translate(100%, -150%));
+		}
+		.work-div {
+			@include transform(translate(-200%, -150%));
+		}
+	}
+
+}
