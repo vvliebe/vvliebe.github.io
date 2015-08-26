@@ -2,28 +2,35 @@
  * Created by vvliebe on 15/8/15.
  */
 
-require(['react', 'global'], function (React, global) {
+require(['react', 'global', 'jquery'], function (React, global, $) {
     var Footer = global.Footer;
 
     var Header = React.createClass({
 
         getInitialState: function () {
-            console.log(this.props);
             return {
-                activeNum: this.props.activeNum,
-                text: this.props.text,
-                imgSrc: this.props.imgSrc
+                title: ""
             };
         },
 
-        componentDidMount: function() {
+        componentDidMount: function () {
+            var title = "WELCOME TO VVLIEBE'S BLOG !";
+            var index = 1;
+            var type = setInterval(function () {
+                console.log(this);
+                this.setState({title: title.substr(0, index++)});
+                console.log(index);
+                if (index == title.length + 1) {
+                    clearInterval(type);
+                }
+            }.bind(this), 300);
 
         },
 
         render: function () {
             return (
-                <header style={{backgroundImage: "url("+this.state.imgSrc+")"}}>
-                    <div className="title">VVLIEBE'S BLOG</div>
+                <header>
+                    <div className="title">{this.state.title}</div>
                     <nav className="clearfix">
                         <div className="blog-div"><i className="fa fa-at"></i> BLOG</div>
                         <div className="about-div"><i className="fa fa-bookmark"></i> WORK</div>
@@ -37,7 +44,7 @@ require(['react', 'global'], function (React, global) {
 
     React.render(
         <div>
-            <Header text={"WELCOME TO MY BLOG !"} activeNum={1} imgSrc={"/build/imgs/background.jpg"}/>
+            <Header text={"WELCOME TO MY BLOG !"} activeNum={1}/>
             <Footer />
         </div>,
         document.getElementById("body")

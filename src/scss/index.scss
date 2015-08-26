@@ -1,24 +1,16 @@
 @import "var";
 
-@-webkit-keyframes type {
-	from {
-		width: 0;
-	}
-}
-
 header {
+	background-image: url("/build/imgs/background.jpg");
 	background-size: 100% 100%;
 	height: 600px;
 	position: relative;
 	.title {
 		position: absolute;
-		width: 250px;
 		left: 100px;
 		top: 50px;
 		font-size: x-large;
 		color: #FFFFFF;
-		overflow: hidden;
-		@include animation(type 5s steps(50, end));
 	}
 	nav {
 		div {
