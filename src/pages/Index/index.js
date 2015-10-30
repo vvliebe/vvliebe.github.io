@@ -7,6 +7,9 @@ import React from 'react';
 // stylesheet
 import './index.scss';
 
+// page
+import Clock from '../../components/clock/clock.js';
+
 class Nav extends React.Component {
     constructor(props) {
         super(props);
@@ -53,6 +56,9 @@ class Page extends React.Component {
         ];
         return <div className="container">
             <Nav menus={menus} />
+            <div className="left-clock">
+                <Clock />
+            </div>
         </div>
     }
 }

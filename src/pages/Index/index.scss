@@ -60,9 +60,13 @@ nav {
 				}
 			}
 		}
-
-		&:hover {
-
-		}
 	}
+}
+
+.left-clock {
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	width: 250px;
+	height: 250px;
 }
