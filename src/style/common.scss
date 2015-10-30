@@ -1,0 +1,135 @@
+
+/*--some common class--*/
+.clearfix:before,
+.clearfix:after {
+  content:" ";
+  display:table;
+}
+.clearfix:after {
+  clear:both;
+}
+.form-control {
+  display:block;
+  color:#666;
+  width:100%;
+  height:34px;
+  font-size:14px;
+  padding:6px 12px;
+  border-radius: 3px;
+  background-color:#fff;
+  border:1px solid #DCDCE0;
+  transition: .2s ease-in-out;
+  &:focus {
+    outline:0;
+    border-color:#00CED1;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 5px rgba(59,180,242,.3);
+  }
+}
+.nowrap {
+  overflow:hidden;
+  white-space:nowrap;
+  -o-text-overflow:ellipsis;
+  text-overflow:ellipsis;
+}
+.container {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  @media(max-width: 480px) {
+    width: 100%;
+  }
+}
+.no-select {
+  user-select: none;
+}
+
+/*--browser info*/
+.browser-info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  color: #8a6d3b;
+  line-height: 60px;
+  text-align: center;
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+}
+.hide-browser-info {
+  cursor: pointer;
+  font-weight: bold;
+  margin-left:10px;
+}
+
+/*--popup inline--*/
+.popup-inline {
+  padding: 7px 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+.popup-inline-warning {
+  color: #ff6a6a;
+  background-color: #FFDFDF;
+}
+.popup-inline-success {
+  color: #3c763d;
+  background-color: #d6e9c6;
+}
+.popup-inline-info {
+  color: #2483b3;
+  background-color: #c2e2f2;
+}
+
+/*--top popup--*/
+.popup-top {
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left:50%;
+  width: 200px;
+  height: 60px;
+  color: #fff;
+  line-height: 24px;
+  padding-top: 17px;
+  font-size: 16px;
+  text-align: center;
+  margin-left: -100px;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.18);
+}
+.popup-top-success {
+  background-color: #3ED081;
+}
+.popup-top-error {
+  background-color: #ff6a6a;
+}
+.popup-top-info {
+  background-color: #01A2A6;
+}
+.popup-top .fa {
+  font-size: 22px;
+  margin-right: 8px;
+}
+
+
+/*-- thin scroll --*/
+.thin-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.thin-scroll::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0);
+}
+.thin-scroll:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,.2);
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,.05);
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);
+}
+

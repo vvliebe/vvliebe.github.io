@@ -1,0 +1,68 @@
+html, body {
+	margin: 0;
+	height: 100%;
+}
+
+body {
+	background: url("/src/images/background.jpg") no-repeat;
+	background-size: 100% 100%;
+}
+
+.container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .2);
+}
+
+nav {
+	ul {
+		float: right;
+		margin: 30px 50px 0 0;
+	}
+
+	li {
+		float: left;
+		width: 100px;
+		height: 30px;
+		text-align: center;
+	}
+
+	.menu-link {
+		display: block;
+		width: 100%;
+		height: 100%;
+		line-height: 30px;
+		color: #ffffff;
+
+		span {
+			position: relative;
+			&:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: -8px;
+				width: 100%;
+				height: 2px;
+				background-color: #ffffff;
+				transform: translate(-100%, 0);
+				opacity: 0;
+				transform-origin: left;
+				transition: .25s ease-in-out;
+			}
+
+			&:hover {
+				&:after {
+					transform: translate(0, 0);
+					opacity: 1;
+				}
+			}
+		}
+
+		&:hover {
+
+		}
+	}
+}
