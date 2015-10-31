@@ -19,7 +19,8 @@ import NotFoundPage from './pages/NotFound/index.js';
 ReactDOM.render(
     <Router>
         <Route path="/">
-            <Route path="index" component={IndexPage} />
+            <IndexRoute component={IndexPage} />
+            <Redirect from="index" to="/" />
             <Route path="*" component={NotFoundPage} />
         </Route>
     </Router>

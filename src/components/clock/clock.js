@@ -31,7 +31,7 @@ class Clock extends React.Component {
             if (i % 5 == 0) {
                 let num = i / 5 == 0 ? 12 : i / 5;
                 scale_list.push(
-                    <div className={`bs-box rotate-${i * 6}`}>
+                    <div key={i} className={`bs-box rotate-${i * 6}`}>
                         <span className="bs">
                             <em className={`rotate-${-i * 6}`}>{num}</em>
                         </span>
@@ -39,7 +39,7 @@ class Clock extends React.Component {
                 );
             } else {
                 scale_list.push(
-                    <div className={`scale-box rotate-${i * 6}`}>
+                    <div key={i} className={`scale-box rotate-${i * 6}`}>
                         <span className="scale"></span>
                     </div>
                 );
