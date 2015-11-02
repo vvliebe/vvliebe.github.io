@@ -1,0 +1,90 @@
+@import "../../../style/mixins";
+
+.demo-modal-container {
+	@include singe_page();
+	background-color: #00ccff;
+}
+
+.tp-logo-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+}
+
+.tp-logo-link {
+	position: absolute;
+	left: 0;
+	right: -60px;
+	top: 40px;
+	height: 40px;
+	line-height: 40px;
+	color: #ffffff;
+	font-size: 14px;
+	text-align: center;
+	transform: rotate(45deg);
+	background-color: #ffa915;
+	word-spacing: 5px;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, .48);
+	transition: .25s ease-in-out;
+	&:hover {
+		box-shadow: 3px 3px 6px rgba(0, 0, 0, .48);
+		text-shadow: 2px 2px 6px rgba(255, 255, 255, .45);
+	}
+}
+
+.demo-content {
+	width: 600px;
+	height: 400px;
+	margin: 100px auto;
+	.description {
+		color: rgb(255, 255, 255);
+		text-align: center;
+		h1 {
+			font-size: 50px;
+		}
+		h2 {
+			font-size: 26px;
+		}
+		a {
+			color: #ff5d4b;
+		}
+	}
+}
+
+.button-groups {
+	width: 100%;
+	button {
+		position: relative;
+		width: 140px;
+		margin: 20px 30px;
+		padding: 10px 0;
+		background-color: #ffffff;
+		border-radius: 3px;
+		overflow: hidden;
+		transition: .5s ease-in-out;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			height: 150px;
+			width: 150px;
+			margin: -75px 0 0 -75px;
+			background-color: rgba(0, 208, 255, .35);
+			border-radius: 100%;
+			transform: scale(0, 0);
+			transition: .5s ease-in-out;
+		}
+
+		&:hover {
+			color: #000;
+			&:after {
+				transform: scale(1, 1);
+			}
+		}
+	}
+}

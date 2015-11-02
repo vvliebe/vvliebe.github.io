@@ -12,7 +12,7 @@ class Clock extends React.Component {
     }
 
     componentDidMount() {
-        setInterval(() => {
+        this.timer = setInterval(() => {
             let date = new Date();
             let h = date.getHours();
             let m = date.getMinutes() + 1;
@@ -23,6 +23,11 @@ class Clock extends React.Component {
             this.refs['minute'].style.transform = `translate(-50%, -100%) rotate(${m * 6 + s / 60 * 6}deg)`;
             this.refs['second'].style.transform = `translate(-50%, -100%) rotate(${s * 6 + ms / 1000 * 6}deg)`;
         }, 30);
+    }
+
+    componentWillUnmount() {
+        // 关闭计时器
+        clearInterval(this.timer);
     }
 
     render() {

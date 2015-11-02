@@ -14,6 +14,7 @@ import './style/common.scss';
 // page
 import IndexPage from './pages/Index/index.js';
 import NotFoundPage from './pages/NotFound/index.js';
+import ModalDemoPage from './pages/demos/modal/index.js';
 
 
 ReactDOM.render(
@@ -21,6 +22,7 @@ ReactDOM.render(
         <Route path="/">
             <IndexRoute component={IndexPage} />
             <Redirect from="index" to="/" />
+            <Route path="v-modal" component={ModalDemoPage} />
             <Route path="*" component={NotFoundPage} />
         </Route>
     </Router>
