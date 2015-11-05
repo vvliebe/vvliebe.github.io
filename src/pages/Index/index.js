@@ -35,8 +35,8 @@ class Page extends React.Component {
         let menus = [
             {
                 id: 1,
-                title: 'index',
-                link: '/#/homepage'
+                title: 'demo',
+                link: '/#/demos'
             },
             {
                 id: 2,
@@ -50,8 +50,13 @@ class Page extends React.Component {
             },
             {
                 id: 4,
-                title: 'github',
-                link: 'https://github.com/vvliebe'
+                title: 'about',
+                link: '/#/about'
+            },
+            {
+                id: 5,
+                title: 'contacts',
+                link: '/#/contacts'
             }
         ];
         return <div className="container">

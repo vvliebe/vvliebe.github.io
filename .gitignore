@@ -56,6 +56,7 @@ Icon
 # Thumbnails
 /src/react_router_test.js
 /.idea
+/TODO.md
 ._*
 
 # Files that might appear in the root of a volume

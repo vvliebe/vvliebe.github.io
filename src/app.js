@@ -22,7 +22,7 @@ ReactDOM.render(
         <Route path="/">
             <IndexRoute component={IndexPage} />
             <Redirect from="index" to="/" />
-            <Route path="v-modal" component={ModalDemoPage} />
+            <Route path="v-rodal" component={ModalDemoPage} />
             <Route path="*" component={NotFoundPage} />
         </Route>
     </Router>
