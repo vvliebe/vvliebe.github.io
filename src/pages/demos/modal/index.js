@@ -9,22 +9,54 @@ import Modal from '../../../components/vmodal/vmodal.js';
 class Page extends React.Component {
     constructor(props) {
         super(props);
+        this.data = ['zoom', 'fade', 'flip', 'door', 'rotate', 'slideUp', 'slideDown', 'slideLeft', 'slideRight'];
         this.state = {
-            data: ['zoom', 'fade', 'flip', 'door', 'rotate', 'slideUp', 'slideDown', 'slideLeft', 'slideRight'],
-            visible: false
-
+            visible: false,
+            animation: this.data[0]
         }
     }
 
     showModal(index) {
         console.log(`you click ${index}`);
-        this.setState({visible: true});
+        this.setState({animation: this.data[index],visible: true});
     }
 
+    doCancel() {
+        console.log("cancel");
+    }
+
+
     render() {
-        let bgs = this.state.data.map((value, index) => {
+        let bgs = this.data.map((value, index) => {
             return <button key={index} onClick={this.showModal.bind(this, index)}>{value}</button>;
         });
+
+        const modal_props = {
+            visible: this.state.visible,
+            title: "hahah",
+            animation: this.state.animation,
+            buttons: [
+                {
+                    title: '取消',
+                    handleClick: this.doCancel.bind(this),
+                    color: '#aabbcc',
+                    width: 25
+                },
+                {
+                    title: '确定',
+                    handleClick: this.doCancel.bind(this),
+                    color: '#aabbcc',
+                    width: 25
+                },
+                {
+                    title: '确定2',
+                    handleClick: this.doCancel.bind(this),
+                    color: '#00CED1',
+                    width: 50
+                }
+            ]
+        };
+
         return <div className="demo-modal-container">
             <div className="tp-logo-wrapper">
                 <a className="tp-logo-link" href="#">View on GitHub</a>
@@ -41,7 +73,7 @@ class Page extends React.Component {
                     {bgs}
                 </div>
             </div>
-            <Modal visible={this.state.visible} title={"v-Rodal"}/>
+            <Modal {...modal_props} />
         </div>
     }
 }
