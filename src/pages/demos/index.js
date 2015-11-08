@@ -19,7 +19,7 @@ export class DemoListPage extends React.Component {
             data: [
                 {
                     title: 'v-rodal',
-                    url: 'http://vsite.com/#/demo->v-rodal',
+                    url: 'http://vvliebe.com/#/demo->v-rodal',
                     color: 'rgb(108, 196, 173)'
                 },
                 {
@@ -39,7 +39,7 @@ export class DemoListPage extends React.Component {
             };
 
             return <div key={index} className="link-div" style={style}>
-                <a href={data.url}>{data.title}</a>
+                <a href={data.url} target="_blank">{data.title}</a>
             </div>
         });
 

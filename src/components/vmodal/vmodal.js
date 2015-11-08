@@ -13,7 +13,7 @@
  */
 
 
-import React, {PropTypes} from 'react';
+import React from 'react';
 import './vmodal.scss';
 
 class VModal extends React.Component {
@@ -91,7 +91,7 @@ class VModal extends React.Component {
             <div className={vModalBoxClazz} style={vModalBoxStyle}>
                 <div className="v-modal-close-btn" onClick={this.hide.bind(this)}></div>
                 <div className="v-modal-title">{this.props.title}</div>
-                <div className="v-modal-child">{this.props.children}</div>
+                <div className="v-modal-child" style={vModalContentStyle}>{this.props.children}</div>
                 <div className="v-modal-button-group">
                     {buttonsDom}
                 </div>
@@ -101,18 +101,18 @@ class VModal extends React.Component {
 }
 
 VModal.propTypes = {
-    visible: PropTypes.bool.isRequired,
-    title: PropTypes.string.isRequired,
-    animation: PropTypes.string,
-    animation_duration: PropTypes.oneOf(['duration-75', 'duration-5', 'duration-25']),
-    buttons: PropTypes.arrayOf(PropTypes.shape({
-        title: PropTypes.string,
-        handlerClick: PropTypes.func,
-        color: PropTypes.string,
-        width: PropTypes.number
+    visible: React.PropTypes.bool.isRequired,
+    title: React.PropTypes.string.isRequired,
+    animation: React.PropTypes.string,
+    animation_duration: React.PropTypes.oneOf(['duration-75', 'duration-5', 'duration-25']),
+    buttons: React.PropTypes.arrayOf(React.PropTypes.shape({
+        title: React.PropTypes.string,
+        handlerClick: React.PropTypes.func,
+        color: React.PropTypes.string,
+        width: React.PropTypes.number
     })),
-    width: PropTypes.number,
-    height: PropTypes.number
+    width: React.PropTypes.number,
+    height: React.PropTypes.number
 };
 
 VModal.defaultProps = {
