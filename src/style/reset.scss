@@ -12,7 +12,6 @@ html {
 body {
 	margin: 0;
 	font-size: 14px;
-	padding-top: 60px;
 	line-height: 1.42857143;
 }
 article,
@@ -107,7 +106,7 @@ pre {
 }
 code,
 kbd,
-pre, {
+pre {
 	font-family: monospace, monospace;
 	font-size: 1em;
 }
