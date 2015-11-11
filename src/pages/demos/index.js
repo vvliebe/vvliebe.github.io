@@ -6,10 +6,12 @@ import React from 'react';
 
 import './index.scss';
 
-import Modal from './modal/index';
+import Modal from './modal/index.js';
+import Game2048 from './2048/2048.js';
 
 const componentMap = {
-    'v-rodal': Modal
+    'v-rodal': Modal,
+    '2048': Game2048
 };
 
 export class DemoListPage extends React.Component {
@@ -26,6 +28,11 @@ export class DemoListPage extends React.Component {
                     title: '2048',
                     url: 'http://2048.vvliebe.com',
                     color: 'rgb(138,118,167)'
+                },
+                {
+                    title: 'react-2048',
+                    url: 'http://vsite.com/#/demo->2048',
+                    color: 'rgb(255,102,51)'
                 }
             ]
         }
