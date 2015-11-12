@@ -18,7 +18,9 @@ class Nav extends React.Component {
     render() {
         let menu_li = this.props.menus.map((data, index) => {
             return <li key={data.id}>
-                <a className="menu-link" href={data.link}><span>{data.title}</span></a>
+                <a className="menu-link" href={data.link}>
+                    <span className="content-span">{data.title}</span>
+                </a>
             </li>
         });
         return <nav className="clear-fix">
