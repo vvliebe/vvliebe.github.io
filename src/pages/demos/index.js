@@ -33,12 +33,12 @@ export class DemoListPage extends React.Component {
                 },
                 {
                     title: 'react-2048',
-                    url: 'http://vsite.com/#/demo->2048',
+                    url: '/#/demo->2048',
                     color: 'rgb(255,102,51)'
                 },
                 {
                     title: 'css3-3d',
-                    url:'http://vsite.com/#/demo->animate-3d',
+                    url:'/#/demo->animate-3d',
                     color: 'rgb(255,51,102)'
                 }
             ]
