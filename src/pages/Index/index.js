@@ -57,8 +57,8 @@ class Page extends React.Component {
             },
             {
                 id: 5,
-                title: 'contacts',
-                link: '/#/contacts'
+                title: 'links',
+                link: '/#/links'
             }
         ];
         return <div className="container">

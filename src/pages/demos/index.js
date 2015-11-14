@@ -8,10 +8,12 @@ import './index.scss';
 
 import Modal from './modal/index.js';
 import Game2048 from './2048/2048.js';
+import AnimatePage from './animate3d/index.js';
 
 const componentMap = {
     'v-rodal': Modal,
-    '2048': Game2048
+    '2048': Game2048,
+    'animate-3d': AnimatePage
 };
 
 export class DemoListPage extends React.Component {
@@ -33,6 +35,11 @@ export class DemoListPage extends React.Component {
                     title: 'react-2048',
                     url: 'http://vsite.com/#/demo->2048',
                     color: 'rgb(255,102,51)'
+                },
+                {
+                    title: 'css3-3d',
+                    url:'http://vsite.com/#/demo->animate-3d',
+                    color: 'rgb(255,51,102)'
                 }
             ]
         }

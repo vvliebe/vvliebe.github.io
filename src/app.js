@@ -14,6 +14,7 @@ import './style/common.scss';
 // page
 import IndexPage from './pages/Index/index.js';
 import NotFoundPage from './pages/NotFound/index.js';
+import LinksPage from './pages/links/index.js';
 import {DemoListPage, DemoPage} from './pages/demos/index.js';
 import ModalDemoPage from './pages/demos/modal/index.js';
 
@@ -25,6 +26,7 @@ ReactDOM.render(
             <Redirect from="index" to="/" />
             <Route path="demos" component={DemoListPage} />
             <Route path="demo->:name" component={DemoPage} />
+            <Route path="links" component={LinksPage} />
             <Route path="*" component={NotFoundPage} />
         </Route>
     </Router>

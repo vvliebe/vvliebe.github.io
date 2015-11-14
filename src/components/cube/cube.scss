@@ -1,0 +1,71 @@
+.cube-wrap {
+	perspective: 400px;
+	perspective-origin: -100px 200px;
+}
+
+.cube-container {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	transform-style: preserve-3d;
+	transform-origin: center center;
+
+
+	>div {
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		text-align: center;
+		line-height: 200px;
+		backface-visibility: hidden;
+		border: 1px solid red;
+	}
+
+	.cube-back {
+		transform: translateZ(-100px) rotateY(180deg);
+		background-color: #00CED1;
+	}
+	.cube-right {
+		transform: rotateY(-270deg) translateX(100px);
+		transform-origin: top right;
+		background-color: #00CED1;
+	}
+	.cube-left {
+		transform: rotateY(270deg) translateX(-100px);
+		transform-origin: left center;
+		background-color: #00CED1;
+	}
+	.cube-up {
+		transform:  rotateX(-90deg) translateZ(100px);
+		transform-origin: center center;
+		background-color: #00CED1;
+	}
+	.cube-down {
+		transform: rotateX(90deg) translateZ(100px);
+		transform-origin: center center;
+		background-color: #00CED1;
+	}
+	.cube-front {
+		transform: translateZ(100px);
+		background-color: #00CED1;
+	}
+}
+
+@keyframes spin {
+	from { transform: rotateY(0deg); }
+	to { transform: rotateY(360deg); }
+}
+
+@keyframes spin-vertical {
+	from { transform: rotateX(0deg); }
+	to { transform: rotateX(360deg); }
+}
+
+
+.cube-container {
+	animation: spin-vertical 5s infinite linear;
+	animation-play-state: paused;
+	&:hover {
+		animation-play-state: running;
+	}
+}
