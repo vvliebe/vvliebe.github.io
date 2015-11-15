@@ -12,16 +12,60 @@ class Links extends React.Component {
         this.state = {
             urls: [
                 {
+                    title: 'jadegong',
+                    link: 'http://www.jadegong.com.cn/',
+                    labels: ['前端']
+                },
+                {
                     title: 'neverland',
                     link: 'http://www.neverl.com/blog/',
-                    labels: ['前端1111111']
+                    labels: ['前端']
+                },
+                {
+                    title: 'norgerman',
+                    link: 'https://www.norgerman.com/',
+                    labels: ['后端']
+                },
+                {
+                    title: 'Renfei Song',
+                    link: 'http://www.renfei.org/',
+                    labels: ['全栈']
+                },
+                {
+                    title: 'sunxfancy',
+                    link: 'http://sunxfancy.github.io/',
+                    labels: ['编译器']
+                },
+                {
+                    title: 'szm',
+                    link: 'http://blog.szm.me/',
+                    labels: ['操作系统']
+                },
+                {
+                    title: 'vincentbel',
+                    link: 'http://www.vincentbel.com/',
+                    labels: ['全栈']
+                },
+                {
+                    title: 'wanzy',
+                    link: 'http://wanzy.me/',
+                    labels: ['软件开发']
+                },
+                {
+                    title: 'WunGCQ',
+                    link: 'http://wcqblog.github.io/',
+                    labels: ['前端']
+                },
+                {
+                    title: 'zstao',
+                    link: 'http://zstao.tk/',
+                    labels: ['前端']
                 }
             ]
         }
     }
 
     render() {
-        // TODO: 三维立体动画
         let links = this.state.urls.map((data, index) => {
             let labels = data.labels.map((label, keyIndex) => {
                 return <span key={keyIndex}>{label}</span>
@@ -49,6 +93,7 @@ export default class LinkPage extends React.Component {
 
     render() {
         return <div className="lp-links-container">
+            <div className="link-title">Links</div>
             <Links />
         </div>
     }
