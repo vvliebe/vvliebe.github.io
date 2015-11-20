@@ -2,6 +2,8 @@
     + demos
         - v-rodal
         - 2048
+        - react-2048
+        - css-3d
     + about
         - resume
     + blog

@@ -1,15 +1,44 @@
-.animate-3d-container {
+.animate-3d-demo {
 	position: absolute;
 	width: 600px;
 	height: 600px;
 	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
+	top: 30%;
 }
 
-.animate-3d-cube-demo {
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	transform: translate(-50%,0);
+.animate-3d-form-div {
+	width: 40%;
+	box-sizing: border-box;
+	padding: 50px;
+
+	.btn-group {
+		height: 100px;
+
+		button {
+			width: 100px;
+			height: 30px;
+			box-sizing: border-box;
+			transition: all .25s ease;
+			cursor: pointer;
+
+			&.left-btn {
+				border-radius: 4px 0 0 4px;
+			}
+
+			&.right-btn {
+				border-radius: 0 4px 4px 0;
+			}
+
+			&.active {
+				color: #fff;
+				background-color: #00CED1;
+			}
+		}
+	}
+
+	.input-group {
+		input{
+			margin: 0 20px;
+		}
+	}
 }

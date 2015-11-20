@@ -1,4 +1,4 @@
-.cube-wrap {
+.cube-wrapper {
 	perspective: 400px;
 	perspective-origin: -100px 200px;
 }
@@ -51,7 +51,7 @@
 	}
 }
 
-@keyframes spin {
+@keyframes spin-horizontal {
 	from { transform: rotateY(0deg); }
 	to { transform: rotateY(360deg); }
 }
@@ -64,8 +64,9 @@
 
 .cube-container {
 	animation: spin-vertical 5s infinite linear;
-	animation-play-state: paused;
+	animation-play-state: running;
+	animation-fill-mode: both;
 	&:hover {
-		animation-play-state: running;
+		animation-play-state: paused;
 	}
 }

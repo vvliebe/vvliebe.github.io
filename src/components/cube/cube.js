@@ -16,8 +16,12 @@ export default class Cube extends React.Component {
             perspectiveOrigin: `${this.props.perspectiveOriginX}px ${this.props.perspectiveOriginY}px `
         };
 
+        let cubeContainerStyle = {
+            animationName: this.props.direction == 'vertical' ? 'spin-vertical' : 'spin-horizontal'
+        };
+
         return <div style={cubeWrapStyle}>
-            <div className="cube-container">
+            <div className="cube-container" style={cubeContainerStyle}>
                 <div className="cube-front">前</div>
                 <div className="cube-back">后</div>
                 <div className="cube-up">上</div>
@@ -32,11 +36,13 @@ export default class Cube extends React.Component {
 Cube.propTypes = {
     perspective: React.PropTypes.number,
     perspectiveOriginX: React.PropTypes.number,
-    perspectiveOriginY: React.PropTypes.number
+    perspectiveOriginY: React.PropTypes.number,
+    direction: React.PropTypes.oneOf(['horizontal','vertical'])
 };
 
 Cube.defaultProps = {
     perspective: 400,
-    perspectiveOriginX: 0,
-    perspectiveOriginY: 0
+    perspectiveOriginX: 200,
+    perspectiveOriginY: 200,
+    direction: 'horizontal'
 };
