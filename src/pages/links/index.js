@@ -17,6 +17,11 @@ class Links extends React.Component {
                     labels: ['前端']
                 },
                 {
+                    title: 'jl',
+                    link: 'http://jlxy.cz/',
+                    labels: ['前端']
+                },
+                {
                     title: 'neverland',
                     link: 'http://www.neverl.com/blog/',
                     labels: ['前端']
