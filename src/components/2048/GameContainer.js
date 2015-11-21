@@ -15,6 +15,15 @@ export default class GameContainer extends React.Component {
         }
     }
 
+    // 开始游戏
+    startGame(){
+        // 清空棋盘
+
+        // 生成一个一个棋子
+
+        // 监听键盘事件
+    }
+
     // 生成各行
     getRows() {
         let rows = [];
