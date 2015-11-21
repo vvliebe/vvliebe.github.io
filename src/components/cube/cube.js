@@ -1,6 +1,10 @@
 /**
  * Created by vvliebe on 15/11/13.
  */
+
+/**
+ * 1.wrap层可以添加旋转，使之可以看到不同的旋转
+ */
 import React from 'react';
 
 import './cube.scss';

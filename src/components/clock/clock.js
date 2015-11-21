@@ -30,7 +30,9 @@ class Clock extends React.Component {
         clearInterval(this.timer);
     }
 
-    render() {
+
+    // 生成刻度
+    getScaleList() {
         let scale_list = [];
         for (let i = 0; i < 60; i++) {
             if (i % 5 == 0) {
@@ -45,17 +47,21 @@ class Clock extends React.Component {
             } else {
                 scale_list.push(
                     <div key={i} className={`scale-box rotate-${i * 6}`}>
-                        <span className="scale"></span>
+                        <span className="scale" />
                     </div>
                 );
             }
         }
+        return scale_list;
+    }
+
+    render() {
         return <div className="v-clock">
             <div ref="hour" className="hour"></div>
             <div ref="minute" className="min"></div>
             <div ref="second" className="sec"></div>
             <div className="cap"></div>
-            {scale_list}
+            {this.getScaleList()}
         </div>
     }
 }

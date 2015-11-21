@@ -8,25 +8,9 @@
 
 import React from 'react';
 
-import './2048.scss'
+import './2048.scss';
 
-class Game2048 extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-
-        }
-    }
-
-    render() {
-
-
-
-        return <div className="game-area">
-
-        </div>
-    }
-}
+import GameContainer from '../../../components/2048/GameContainer.js';
 
 export default class Page extends React.Component {
     constructor(props) {
@@ -35,7 +19,7 @@ export default class Page extends React.Component {
 
     render() {
         return <div className="game-2048-container">
-            <Game2048 />
+            <GameContainer />
         </div>
     }
 }
