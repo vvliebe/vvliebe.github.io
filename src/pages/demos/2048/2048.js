@@ -19,7 +19,7 @@ export default class Page extends React.Component {
 
     render() {
         return <div className="game-2048-container">
-            <GameContainer />
+            <GameContainer size={4} />
         </div>
     }
 }

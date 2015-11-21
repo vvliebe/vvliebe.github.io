@@ -1,4 +1,4 @@
-.game-area {
+.game-2048-area {
 	position: absolute;
 	bottom:0;
 	left: 0;
@@ -7,5 +7,20 @@
 	padding: 12px;
 	box-sizing: border-box;
 	border-radius: 12px;
-	background-color: rgba(109, 100, 32, 0.75);
+	background-color: #E2DCB9;
+}
+
+.game-2048-row {
+	&:not(:first-child){
+		margin-top: 12px;
+	}
+}
+
+.game-2048-cell {
+	display: inline-block;
+	background-color: rgba(0,0,0,.3);
+
+	&:not(:first-child){
+		margin-left: 12px;
+	}
 }

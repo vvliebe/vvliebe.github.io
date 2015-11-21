@@ -5,6 +5,8 @@ import React from 'react';
 
 import './game2048.scss';
 
+import GameRow from './GameRow.js';
+
 export default class GameContainer extends React.Component {
     constructor(props) {
         super(props);
@@ -13,12 +15,20 @@ export default class GameContainer extends React.Component {
         }
     }
 
+    // 生成各行
+    getRows() {
+        let rows = [];
+        for (let i = 0; i < this.state.size; i++) {
+            rows.push(<GameRow size={this.state.size} key={i}/>);
+        }
+        return rows;
+    }
 
     render() {
 
 
-        return <div className="game-area">
-
+        return <div className="game-2048-area">
+            {this.getRows()}
         </div>
     }
 }
