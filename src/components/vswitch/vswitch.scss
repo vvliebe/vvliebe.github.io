@@ -1,0 +1,23 @@
+.v-switch {
+	position: relative;
+	background-color: #00CED1;
+	padding: 2px;
+	box-sizing: border-box;
+	transition: all .25s ease-in-out;
+
+	.v-switch-circle {
+		position: absolute;
+		left: 4px;
+		border-radius: 100%;
+		background-color: #ffffff;
+		transition: all .25s ease-in-out;
+		transform: translate(100%, 0);
+	}
+
+	&.v-switch-checked {
+		background-color: #999;
+		.v-switch-circle {
+			transform: translate(0, 0);
+		}
+	}
+}

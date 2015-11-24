@@ -9,11 +9,13 @@ import './index.scss';
 import Modal from './modal/index.js';
 import Game2048 from './2048/2048.js';
 import AnimatePage from './animate3d/index.js';
+import Switch from './switch/index.js';
 
 const componentMap = {
     'v-rodal': Modal,
     '2048': Game2048,
-    'animate-3d': AnimatePage
+    'animate-3d': AnimatePage,
+    'switch': Switch
 };
 
 export class DemoListPage extends React.Component {
@@ -40,6 +42,11 @@ export class DemoListPage extends React.Component {
                     title: 'css3-3d',
                     url:'/#/demo->animate-3d',
                     color: 'rgb(255,51,102)'
+                },
+                {
+                    title: 'switch',
+                    url: '/#/demo->switch',
+                    color: 'rgb(255,102,51)'
                 }
             ]
         }
