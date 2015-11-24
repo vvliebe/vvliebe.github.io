@@ -72,7 +72,7 @@ class VModal extends React.Component {
         };
 
         const vModalContentStyle = {
-            maxHeight: `${this.props.width - 70}px}`
+            height: `${this.props.height - 90}px`
         };
 
         const vModalClazz = `v-modal ${this.props.animation_duration} v-modal-fade-${this.state.animationType}`;
@@ -83,7 +83,9 @@ class VModal extends React.Component {
                 backgroundColor: data.color,
                 width: `${data.width}%`
             };
-            return <button style={style} key={index} onClick={data.handleClick}>{data.title}</button>
+            return <button style={style} key={index}
+                           onClick={() => {data.handleClick();this.hide();}}>{data.title}
+            </button>
         });
 
         return <div className={vModalClazz} style={vModalStyle}>

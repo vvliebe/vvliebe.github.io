@@ -1,5 +1,11 @@
 .v-modal {
 	position: fixed;
+
+	button {
+		border: none;
+		outline: none;
+		cursor: pointer;
+	}
 }
 
 .v-modal-mask {
