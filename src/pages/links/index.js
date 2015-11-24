@@ -52,6 +52,11 @@ class Links extends React.Component {
                     labels: ['全栈']
                 },
                 {
+                    title: 'Orange',
+                    link: 'http://orangeblog.sinaapp.com/',
+                    labels: ['Android']
+                },
+                {
                     title: 'wanzy',
                     link: 'http://wanzy.me/',
                     labels: ['软件开发']
