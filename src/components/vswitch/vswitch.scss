@@ -1,23 +1,45 @@
 .v-switch {
 	position: relative;
-	background-color: #00CED1;
 	padding: 2px;
+	background-color: #999;
 	box-sizing: border-box;
 	transition: all .25s ease-in-out;
+	cursor: pointer;
+	color: #fff;
+
+	.v-text-left-span,
+	.v-text-right-span {
+		text-align: center;
+		animation: v-fadeIn .25s ease-in-out;
+		animation-fill-mode: both;
+	}
+
+	.v-text-left-span {
+		float: left;
+	}
+
+	.v-text-right-span {
+		float: right;
+	}
 
 	.v-switch-circle {
 		position: absolute;
-		left: 4px;
+		left: 0;
 		border-radius: 100%;
 		background-color: #ffffff;
 		transition: all .25s ease-in-out;
-		transform: translate(100%, 0);
 	}
 
 	&.v-switch-checked {
-		background-color: #999;
-		.v-switch-circle {
-			transform: translate(0, 0);
-		}
+		background-color: #00CED1;
+	}
+}
+
+@keyframes v-fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }

@@ -12,7 +12,7 @@ export default class SwitchPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            checked: true
+            checked: false
         }
     }
 

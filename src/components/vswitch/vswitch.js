@@ -14,6 +14,12 @@ export default class Vswitch extends React.Component {
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.checked != this.state.checked) {
+            this.setState({checked: nextProps.checked});
+        }
+    }
+
     changeCheckState() {
         let {checked} = this.state;
         this.setState({checked: !checked});
@@ -22,6 +28,8 @@ export default class Vswitch extends React.Component {
     render() {
         let {checked} = this.state;
         let {width,height,checked_title,unchecked_title} = this.props;
+
+        // style
         let vSwitchStyle = {
             width: `${width}px`,
             height: `${height}px`,
@@ -29,28 +37,38 @@ export default class Vswitch extends React.Component {
         };
         let vCircleStyle = {
             width: `${height - 4}px`,
-            height: `${height - 4}px`
+            height: `${height - 4}px`,
+            transform: checked ? `translate(${width - height + 2}px,0)` : `translate(2px,0)`
+        };
+        let vTextLeftStyle = {
+            width: `${width - height + 4}px`,
+            display: checked ? 'inline-block' : 'none'
+        };
+        let vTextRightStyle = {
+            width: `${width - height + 4}px`,
+            display: checked ? 'none' : 'inline-block'
         };
 
+        // class
         let vSwitchClass = checked ? "v-switch v-switch-checked" : "v-switch";
 
-        let vText = checked ? checked_title : unchecked_title;
 
         return <div onClick={this.changeCheckState.bind(this)}
                     className={vSwitchClass}
                     style={vSwitchStyle}>
-            <span>{vText}</span>
+            <span className="v-text-left-span" style={vTextLeftStyle}>{checked_title}</span>
             <span className="v-switch-circle" style={vCircleStyle}/>
+            <span className="v-text-right-span" style={vTextRightStyle}>{unchecked_title}</span>
         </div>
     }
 }
 
 Vswitch.defaultProps = {
     checked: false,
-    width: 50,
+    width: 70,
     height: 25,
-    checked_title: '',
-    unchecked_title: ''
+    checked_title: 'on',
+    unchecked_title: 'off'
 };
 
 Vswitch.propTypes = {
