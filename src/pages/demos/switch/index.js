@@ -18,7 +18,7 @@ export default class SwitchPage extends React.Component {
 
     render() {
         return <div className="switch-page-container">
-            <Switch checked={this.state.checked} />
+            <Switch checked={this.state.checked} title={"全选"} />
         </div>
     }
 }

@@ -6,6 +6,17 @@
 	transition: all .25s ease-in-out;
 	cursor: pointer;
 	color: #fff;
+	overflow: visible;
+
+	.v-title-span {
+		position: absolute;
+		display: inline-block;
+		left : 100%;
+		top: 0;
+		margin-left: 10px;
+		color: #000000;
+		white-space: nowrap;
+	}
 
 	.v-text-left-span,
 	.v-text-right-span {

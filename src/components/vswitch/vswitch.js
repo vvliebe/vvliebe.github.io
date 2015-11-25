@@ -25,6 +25,17 @@ export default class Vswitch extends React.Component {
         this.setState({checked: !checked});
     }
 
+    getTitle() {
+        if (!this.props.title)
+            return null;
+        let vTitleStyle = {
+            lineHeight: `${this.props.height}px`
+        };
+        return <span style={vTitleStyle} className="v-title-span">
+            {this.props.title}
+        </span>
+    }
+
     render() {
         let {checked} = this.state;
         let {width,height,checked_title,unchecked_title} = this.props;
@@ -58,6 +69,7 @@ export default class Vswitch extends React.Component {
                     style={vSwitchStyle}>
             <span className="v-text-left-span" style={vTextLeftStyle}>{checked_title}</span>
             <span className="v-switch-circle" style={vCircleStyle}/>
+            {this.getTitle()}
             <span className="v-text-right-span" style={vTextRightStyle}>{unchecked_title}</span>
         </div>
     }
@@ -65,15 +77,19 @@ export default class Vswitch extends React.Component {
 
 Vswitch.defaultProps = {
     checked: false,
-    width: 70,
+    width: 50,
     height: 25,
-    checked_title: 'on',
-    unchecked_title: 'off'
+    checked_title: '',
+    unchecked_title: '',
+    title: ''
 };
 
 Vswitch.propTypes = {
     checked: React.PropTypes.bool,
     width: React.PropTypes.number,
-    height: React.PropTypes.number
+    height: React.PropTypes.number,
+    checked_title: React.PropTypes.string,
+    unchecked_title: React.PropTypes.string,
+    title: React.PropTypes.string
 };
 
