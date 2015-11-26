@@ -22,7 +22,11 @@ export default class Vswitch extends React.Component {
 
     changeCheckState() {
         let {checked} = this.state;
+        let {handleChange} = this.props;
         this.setState({checked: !checked});
+        if (handleChange) {
+            handleChange(!checked);
+        }
     }
 
     getTitle() {
@@ -90,6 +94,7 @@ Vswitch.propTypes = {
     height: React.PropTypes.number,
     checked_title: React.PropTypes.string,
     unchecked_title: React.PropTypes.string,
-    title: React.PropTypes.string
+    title: React.PropTypes.string,
+    handleChange: React.PropTypes.func
 };
 
