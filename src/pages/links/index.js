@@ -53,7 +53,7 @@ class Links extends React.Component {
                 },
                 {
                     title: 'Orange',
-                    link: 'http://orangeblog.sinaapp.com/',
+                    link: 'http://www.orangecpp.com/',
                     labels: ['Android']
                 },
                 {
