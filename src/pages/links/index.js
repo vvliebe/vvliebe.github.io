@@ -6,6 +6,8 @@ import React from 'react';
 
 import './index.scss';
 
+import Pagination from '../../components/pagination/pagination';
+
 class Links extends React.Component {
     constructor(props) {
         super(props);
@@ -105,6 +107,7 @@ export default class LinkPage extends React.Component {
         return <div className="lp-links-container">
             <div className="link-title">Links</div>
             <Links />
+            <Pagination />
         </div>
     }
 }

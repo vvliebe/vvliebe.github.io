@@ -30,9 +30,9 @@ class VModal extends React.Component {
         console.log(`next props is ${nextProps.visible}`);
         console.log(`this props is ${this.props.visible}`);
         console.log(`this state is ${this.state.isShow}`);
-        if (nextProps.visible && !this.state.isShow) {
+        if (nextProps.visible && !this.props.visible) {
             this.show();
-        } else if (!nextProps.visible && this.state.isShow) {
+        } else if (!nextProps.visible && this.props.visible) {
             // 此函数不一定会被调用
             this.hide();
         }
@@ -43,6 +43,7 @@ class VModal extends React.Component {
     }
 
     hide() {
+        this.props.onClose();
         this.setState({animationType: 'leave'}, () => {
             let duration = 0;
             if (this.props.animation_duration == 'duration-25') {
@@ -55,7 +56,6 @@ class VModal extends React.Component {
             setTimeout(() => {
                 this.setState({isShow: false});
             }, duration);
-
         });
     }
 
@@ -70,9 +70,9 @@ class VModal extends React.Component {
             height: `${this.props.height}px`,
             margin: `${-this.props.height / 2}px 0 0 ${-this.props.width / 2}px`
         };
-
+        let oHeight = this.props.showTitle ? 90 : 50;
         const vModalContentStyle = {
-            height: `${this.props.height - 90}px`
+            height: `${this.props.height - oHeight}px`
         };
 
         const vModalClazz = `v-modal ${this.props.animation_duration} v-modal-fade-${this.state.animationType}`;
@@ -88,12 +88,14 @@ class VModal extends React.Component {
             </button>
         });
 
+        const titleDom = this.props.showTitle ? <div className="v-modal-title">{this.props.title}</div> : null;
+
         return <div className={vModalClazz} style={vModalStyle}>
             <div className="v-modal-mask" onClick={this.hide.bind(this)}></div>
             <div className={vModalBoxClazz} style={vModalBoxStyle}>
-                <div className="v-modal-close-btn" onClick={this.hide.bind(this)}></div>
-                <div className="v-modal-title">{this.props.title}</div>
+                {titleDom}
                 <div className="v-modal-child" style={vModalContentStyle}>{this.props.children}</div>
+                <div className="v-modal-close-btn" onClick={this.hide.bind(this)}></div>
                 <div className="v-modal-button-group">
                     {buttonsDom}
                 </div>
@@ -104,8 +106,8 @@ class VModal extends React.Component {
 
 VModal.propTypes = {
     visible: React.PropTypes.bool.isRequired,
-    title: React.PropTypes.string.isRequired,
-    animation: React.PropTypes.string,
+    title: React.PropTypes.string,
+    animation: React.PropTypes.oneOf(['fade', 'zoom', 'flip', 'door', 'rotate', 'slideDown', 'slideLeft', 'slideRight', 'slideUp']),
     animation_duration: React.PropTypes.oneOf(['duration-75', 'duration-5', 'duration-25']),
     buttons: React.PropTypes.arrayOf(React.PropTypes.shape({
         title: React.PropTypes.string,
@@ -114,14 +116,17 @@ VModal.propTypes = {
         width: React.PropTypes.number
     })),
     width: React.PropTypes.number,
-    height: React.PropTypes.number
+    height: React.PropTypes.number,
+    onClose: React.PropTypes.func.isRequired,
+    showTitle: React.PropTypes.bool
 };
 
 VModal.defaultProps = {
     animation: 'fade',
-    animation_duration: 'duration-25',
+    animation_duration: 'duration-5',
     width: 400,
     height: 400,
+    showTitle: true,
     buttons: [
         {
             title: '取消',

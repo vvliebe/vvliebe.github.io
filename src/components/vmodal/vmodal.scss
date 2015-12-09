@@ -4,13 +4,12 @@
 	button {
 		border: none;
 		outline: none;
-		cursor: pointer;
 	}
 }
 
 .v-modal-mask {
 	position: absolute;
-	background-color: rgba(0, 0, 0, .45);
+	background-color: rgba(0, 0, 0, .4);
 }
 
 .v-modal, .v-modal-mask {
@@ -85,10 +84,6 @@
 		}
 	}
 
-	.v-modal-child {
-		overflow: hidden; // 有待更改，暂时让其隐藏多余内容。让其子节点自己处理
-	}
-
 	.v-modal-button-group {
 		position: absolute;
 		left: 0;
@@ -103,7 +98,7 @@
 			display: inline-block;
 			height: 100%;
 			box-sizing: border-box;
-
+			cursor: pointer;
 			&:not(:first-child) {
 				border-left: 1px solid #ffffff;
 			}
@@ -280,6 +275,7 @@
 		transform: translate3d(0, 0, 0);
 	}
 }
+
 .v-modal-slideDown-enter {
 	animation: v-modal-slideDown-enter both cubic-bezier(0.4, 0, 0, 1.5);
 }
@@ -292,6 +288,7 @@
 		transform: translate3d(0, -100px, 0);
 	}
 }
+
 .v-modal-slideDown-leave {
 	animation: v-modal-slideDown-leave both ease;
 }
@@ -305,6 +302,7 @@
 		transform: translate3d(0, 0, 0);
 	}
 }
+
 .v-modal-slideLeft-enter {
 	animation: v-modal-slideLeft-enter both cubic-bezier(0.4, 0, 0, 1.5);
 }
@@ -317,6 +315,7 @@
 		transform: translate3d(-150px, 0, 0);
 	}
 }
+
 .v-modal-slideLeft-leave {
 	animation: v-modal-slideLeft-leave both ease;
 }
@@ -330,6 +329,7 @@
 		transform: translate3d(0, 0, 0);
 	}
 }
+
 .v-modal-slideRight-enter {
 	animation: v-modal-slideRight-enter both cubic-bezier(0.4, 0, 0, 1.5);
 }
@@ -342,6 +342,7 @@
 		transform: translate3d(150px, 0, 0);
 	}
 }
+
 .v-modal-slideRight-leave {
 	animation: v-modal-slideRight-leave both ease;
 }
@@ -355,6 +356,7 @@
 		transform: translate3d(0, 0, 0);
 	}
 }
+
 .v-modal-slideUp-enter {
 	animation: v-modal-slideUp-enter both cubic-bezier(0.4, 0, 0, 1.5);
 }
@@ -367,6 +369,7 @@
 		transform: translate3d(0, 100px, 0);
 	}
 }
+
 .v-modal-slideUp-leave {
 	animation: v-modal-slideUp-leave both ease;
 }
