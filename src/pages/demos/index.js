@@ -47,6 +47,11 @@ export class DemoListPage extends React.Component {
                     title: 'switch',
                     url: '/#/demo->switch',
                     color: 'rgb(255,102,51)'
+                },
+                {
+                    title: 'css-shade',
+                    url: 'http://example.vvliebe.com/css形状.html',
+                    color: '#ff554b'
                 }
             ]
         }
