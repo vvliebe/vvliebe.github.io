@@ -18,11 +18,15 @@ class Page extends React.Component {
 
     showModal(index) {
         console.log(`you click ${index}`);
-        this.setState({animation: this.data[index],visible: true});
+        this.setState({animation: this.data[index], visible: true});
     }
 
     doCancel() {
         console.log("cancel");
+    }
+
+    onClose() {
+        this.setState({visible: false});
     }
 
 
@@ -35,6 +39,7 @@ class Page extends React.Component {
             visible: this.state.visible,
             title: "hahah",
             animation: this.state.animation,
+            onClose: this.props.onClose.bind(this),
             buttons: [
                 {
                     title: '取消',
