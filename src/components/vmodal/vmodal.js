@@ -39,11 +39,13 @@ class VModal extends React.Component {
     }
 
     show() {
+        document.querySelector('body').style.overflow = 'hidden';
         this.setState({animationType: 'enter', isShow: true});
     }
 
     hide() {
         this.props.onClose();
+        document.querySelector('body').style.overflow = null;
         this.setState({animationType: 'leave'}, () => {
             let duration = 0;
             if (this.props.animation_duration == 'duration-25') {

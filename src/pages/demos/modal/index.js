@@ -39,7 +39,7 @@ class Page extends React.Component {
             visible: this.state.visible,
             title: "hahah",
             animation: this.state.animation,
-            onClose: this.props.onClose.bind(this),
+            onClose: this.onClose.bind(this),
             buttons: [
                 {
                     title: '取消',
