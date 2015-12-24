@@ -6,74 +6,13 @@ import React from 'react';
 
 import './index.scss';
 
-import Pagination from '../../components/pagination/pagination';
+import links from '../../data/links';
 
 class Links extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            urls: [
-                {
-                    title: 'jadegong',
-                    link: 'http://www.jadegong.com.cn/',
-                    labels: ['前端']
-                },
-                {
-                    title: 'jl',
-                    link: 'http://jlxy.cz/',
-                    labels: ['前端']
-                },
-                {
-                    title: 'neverland',
-                    link: 'http://www.neverl.com/blog/',
-                    labels: ['前端']
-                },
-                {
-                    title: 'norgerman',
-                    link: 'https://www.norgerman.com/',
-                    labels: ['后端']
-                },
-                {
-                    title: 'Renfei Song',
-                    link: 'http://www.renfei.org/',
-                    labels: ['全栈']
-                },
-                {
-                    title: 'sunxfancy',
-                    link: 'http://sunxfancy.github.io/',
-                    labels: ['编译器']
-                },
-                {
-                    title: 'szm',
-                    link: 'http://blog.szm.me/',
-                    labels: ['操作系统']
-                },
-                {
-                    title: 'vincentbel',
-                    link: 'http://www.vincentbel.com/',
-                    labels: ['全栈']
-                },
-                {
-                    title: 'Orange',
-                    link: 'http://www.orangecpp.com/',
-                    labels: ['Android']
-                },
-                {
-                    title: 'wanzy',
-                    link: 'http://wanzy.me/',
-                    labels: ['软件开发']
-                },
-                {
-                    title: 'WunGCQ',
-                    link: 'http://wcqblog.github.io/',
-                    labels: ['前端']
-                },
-                {
-                    title: 'zstao',
-                    link: 'http://zstao.tk/',
-                    labels: ['前端']
-                }
-            ]
+            urls: links
         }
     }
 
@@ -105,9 +44,9 @@ export default class LinkPage extends React.Component {
 
     render() {
         return <div className="lp-links-container">
+            <div className="bg-div"></div>
             <div className="link-title">Links</div>
             <Links />
-            <Pagination />
         </div>
     }
 }
