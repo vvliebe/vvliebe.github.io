@@ -77,6 +77,11 @@ let links = [
         title: 'Jeffrey Wang',
         link: 'http://wjfwzzc.tk/',
         labels: ['算法']
+    },
+    {
+        title: 'lp1995',
+        link: 'http://www.dododo95.com/',
+        labels: ['前端']
     }
 ];
 

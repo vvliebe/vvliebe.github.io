@@ -11,6 +11,8 @@ import Game2048 from './2048/2048.js';
 import AnimatePage from './animate3d/index.js';
 import Switch from './switch/index.js';
 
+import demos from '../../data/demos';
+
 const componentMap = {
     'v-rodal': Modal,
     '2048': Game2048,
@@ -21,45 +23,10 @@ const componentMap = {
 export class DemoListPage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            data: [
-                {
-                    title: 'v-rodal',
-                    url: 'http://vvliebe.com/#/demo->v-rodal',
-                    color: 'rgb(108, 196, 173)'
-                },
-                {
-                    title: '2048',
-                    url: 'http://2048.vvliebe.com',
-                    color: 'rgb(138,118,167)'
-                },
-                //{
-                //    title: 'react-2048',
-                //    url: '/#/demo->2048',
-                //    color: 'rgb(255,102,51)'
-                //},
-                {
-                    title: 'css3-3d',
-                    url:'/#/demo->animate-3d',
-                    color: 'rgb(255,51,102)'
-                },
-                {
-                    title: 'switch',
-                    url: '/#/demo->switch',
-                    color: 'rgb(255,102,51)'
-                },
-                {
-                    title: 'css-shade',
-                    url: 'http://example.vvliebe.com/css形状.html',
-                    color: '#ff554b'
-                }
-            ]
-        }
     }
 
     render() {
-
-        const linkListDom = this.state.data.map((data, index) => {
+        const linkListDom = demos.map((data, index) => {
             let style = {
                 backgroundColor: data.color
             };
