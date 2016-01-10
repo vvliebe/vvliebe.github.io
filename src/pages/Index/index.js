@@ -43,7 +43,7 @@ class Page extends React.Component {
             {
                 id: 2,
                 title: 'blog',
-                link: 'http://blog.vvliebe.com'
+                link: 'https://blog.vvliebe.com'
             },
             {
                 id: 3,

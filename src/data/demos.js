@@ -5,7 +5,7 @@
 let demos = [
     {
         title: 'v-rodal',
-        url: 'http://vvliebe.com/#/demo->v-rodal',
+        url: 'https://vvliebe.com/#/demo->v-rodal',
         color: 'rgb(108, 196, 173)'
     },
     {
@@ -32,12 +32,12 @@ let demos = [
         title: 'css-shade',
         url: 'http://example.vvliebe.com/css形状.html',
         color: '#ff554b'
-    },
-    {
-        title: 'react-loading',
-        url: 'http:/#/demo->loading',
-        color: 'rgb(138,118,167)'
     }
+    //{
+    //    title: 'react-loading',
+    //    url: 'http:/#/demo->loading',
+    //    color: 'rgb(138,118,167)'
+    //}
 ];
 
 
