@@ -1,34 +1,27 @@
-/**
- * Created by vvliebe on 15/10/29.
- */
+import React from 'react'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
-// library
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router, Route, PropTypes, IndexRoute, Redirect } from 'react-router';
+import Home from '@/pages/home/index'
+import About from '@/pages/about/index'
+import Projects from '@/pages/projects/index'
 
-// stylesheet
-import './style/reset.scss';
-import './style/common.scss';
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/projects">Topics</Link></li>
+          </ul>
+          <Route exact path="/" component={Home}></Route>
+          <Route path="/about" component={About}></Route>
+          <Route path="/projects" component={Projects}></Route>
+        </div>
+      </Router>
+    )
+  }
+}
 
-// page
-import IndexPage from './pages/Index/index.js';
-import NotFoundPage from './pages/NotFound/index.js';
-import LinksPage from './pages/links/index.js';
-import {DemoListPage, DemoPage} from './pages/demos/index.js';
-import ModalDemoPage from './pages/demos/modal/index.js';
-
-
-ReactDOM.render(
-    <Router>
-        <Route path="/">
-            <IndexRoute component={IndexPage} />
-            <Redirect from="index" to="/" />
-            <Route path="demos" component={DemoListPage} />
-            <Route path="demo->:name" component={DemoPage} />
-            <Route path="links" component={LinksPage} />
-            <Route path="*" component={NotFoundPage} />
-        </Route>
-    </Router>
-    , document.getElementById('app')
-);
+export default App
